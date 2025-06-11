@@ -1,10 +1,9 @@
 import numpy as np
-import scipy
-import matplotlib.pyplot as plt
 import qutip as q
 from choi import *
 from helper_functions import *
 from choi_helper import *
+import sparse
 
 def beamsplitter(N,eta):
     """
@@ -19,7 +18,7 @@ def beamsplitter(N,eta):
         qutip.Qobj: Unitary operator representing the beamsplitter
     """
     a = q.destroy(N)
-    return(np.arcsin(np.sqrt(eta))*(q.tensor(a,a.dag()) - q.tensor(a.dag(),a))).expm()
+    return (np.arcsin(np.sqrt(eta))*(q.tensor(a,a.dag()) - q.tensor(a.dag(),a))).expm()
 
 def twoModeSq(N, r):
     """

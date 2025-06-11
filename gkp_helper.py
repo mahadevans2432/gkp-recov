@@ -1,5 +1,4 @@
 import numpy as np
-import scipy
 import matplotlib.pyplot as plt
 import qutip as q
 from choi import *
